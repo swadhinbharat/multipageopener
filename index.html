@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        textarea {
+            width: 100%;
+        }
+
+        .textwrapper {
+            border: 1px solid #999999;
+            margin: 5px 0;
+            padding: 3px;
+        }
+
+        button {
+            width: 100%;
+            height: 3rem;
+        }
+    </style>
+
+    <script>
+        // On Press of Open All
+        function openAll() {
+            var linkText = document.getElementById("textareaInput").value;
+            var links = linkText?.replaceAll(' ', '').split('\n');
+
+            links.forEach(element => {
+                if (element) {
+                    window.open(element, '_blank');
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div style="display: block;" id="rulesformitem" class="formitem">
+        <label for="rules" id="ruleslabel">Enter your links:</label>
+        <div class="textwrapper">
+            <textarea id="textareaInput" class="center boxsizingBorder" cols="128" rows="40"></textarea>
+        </div>
+    </div>
+
+
+    <br>
+
+    <button id="#btnOpenAll" onclick="openAll()" >
+        Open All
+    </button>
+
+</body>
+
+</html>
